@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="container">
+        <h1>The Current Time</h1>
+        <h1 id="display"></h1>
+        <h3>Set the Alarm Time</h3>
+
+       <table>
+           <tr>
+               <th>Hours</th>
+               <th>Minutes</th>
+               <th>Seconds</th>
+           </tr>
+
+           <tr>
+               <td><input id="hour" type="number" min="0" max="23" onkeyup="if(this.value > 23 || this.value < 0) {alert('Invalid Hour!!!'); this.value = null;}"></td>
+               <td><input id="minute" type="number" min="0" max="59" onkeyup="if(this.value > 59 || this.value < 0) {alert('Invalid Minutes!!!'); this.value = null;}"></td>
+               <td><input id="second" type="number" min="0" max="59" onkeyup="if(this.value > 59 || this.value < 0) {alert('Invalid Seconds!!!'); this.value = null;}"></td>
+           </tr>
+       </table>
+
+       <button id="set" onclick="set()">Set</button>
+       <button id="reset" onclick="cl()">Reset</button>
+       <button id="snooze" onclick="snooze()">Snooze</button>
+
+       <h3>Set the Snooze duration: </h3>
+       <input id="snoozeDuration" type="number" min="3" max="10" onkeyup="if(this.value > 10 || this.value < 3) {alert('Snooze works just for 3 , 5 , 10 minutes options!!!'); this.value = null;}" placeholder="3, 5, 10 miutes">
+
+       <br><br>
+
+       <audio id="wake_up_tone">
+        <source src="wake_up.mp3" type="audio/mp3">
+         Your browser does not support the audio element.
+       </audio>
+
+       <h3 id="note">Wake Up!!!</h3>
+        
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
