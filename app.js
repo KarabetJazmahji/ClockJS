@@ -49,19 +49,19 @@ function snooze(){
         setTimeout(function(){
             x.play();
             document.getElementById("note").style.visibility = "visible";
-        },3000);
+        },3000*60);
     }
     else if(dur == 5){
         setTimeout(function(){
             x.play();
             document.getElementById("note").style.visibility = "visible";
-        },5000);
+        },5000*60);
     }
     else{
         setTimeout(function(){
             x.play();
             document.getElementById("note").style.visibility = "visible";
-        },10000);
+        },10000*60);
     }
 }
 
